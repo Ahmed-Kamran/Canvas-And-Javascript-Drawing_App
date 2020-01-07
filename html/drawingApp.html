@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../style/DrawStyle.css">
+
+
+</head>
+
+<body>
+    x
+
+    <div class="UpVar">
+        <label class="UpVarss">Shadow Size: <input id="shadow" type="range" step="1" min="0" max="10"></label>
+        <label class="UpVarss">Polygon Size: <input id="PolygonSize" type="range" step="1" min="3" max="10"></label>
+        <label class="UpVarss">Polygon Angle: <input id="PolygonAngle" type="range" step="1" min="0" max="90"></label>
+        <label for="">Line Width: <input id="LineWidth" type="range" step="1" min=".5" max="100" value="2"></label>
+    </div>
+
+    <div class="UpVar mt-2">
+        <label>Color: <input class="colorcolor" id="changeColor" type="color" value="#24B0D5"></label>
+        <label>Stroke Color: <input class="colorcolor" id="changeLineColor" type="color" value="#242424"></label>
+        <label>Bckground <input class="colorcolor" id="backgroundColor" type="color" value="#343343"></label>
+        <label>Shadow: <input class="colorcolor" id="shadowColor" type="color" value="#454545"></label>
+    </div>
+
+    <div class="controls col-md-2">
+        <p><label for="">Fill: <input id="fillBox" type="checkbox"> </label></p>
+
+
+
+
+        <div class="ShapeOptions">
+            <h4>Line Cap</h4>
+            <label class="radioButton"><input class="radios" type="radio" name="lineCap" value="butt" title="fill"
+                    checked="checked"><i class="fa fa-pencil-square-o"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="lineCap" value="round"><i
+                    class="fa fa-circle-o"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="lineCap" value="square"><i
+                    class="fa fa-stop"></i></label>
+        </div>
+
+        <div class="ShapeOptions">
+            <h4>Shape</h4>
+            <label class="radioButton"> <input class="radios" type="radio" id="stroke" name="shape" value="stroke"
+                    checked="checked">
+                <i class="fa fa-pencil"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="line"><i
+                    class="fa fa-long-arrow-up"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="circle"><i
+                    class="fa fa-circle"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="polygon"><i
+                    class="fa fa-square"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="polarCurve"><i
+                    class="fa fa-snowflake-o"></i></label>
+        </div>
+        <div class="ShapeOptions">
+            <h4>Brush</h4>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="star"><i
+                    class="fa fa-star"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="bubble"><i
+                    class="fa fa-comment-o"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="fur"><i
+                    class="fa fa-firefox"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="pen"><i
+                    class="fa fa-pencil"></i></label>
+            <label class="radioButton"><input class="radios" type="radio" name="shape" value="neighborPoints"><i
+                    class="fa fa-road"></i></label>
+        </div>
+        <div class="ShapeOptions" id="composition">
+            <h4>Composition Control</h4>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="source-top"><i
+                    class="fa fa-star"></i>Source-Top</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="source-in"><i
+                    class="fa fa-comment-o"></i>Source-In</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="source-out"><i
+                    class="fa fa-firefox"></i>Source-out</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="source-over"><i
+                    class="fa fa-pencil"></i>Source-over</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="destination-top"><i
+                    class="fa fa-road"></i>Destination-Top</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="destination-in"><i
+                    class="fa fa-road"></i>Destination-In</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="destination-out"><i
+                    class="fa fa-road"></i>Destination-Out</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="destination-over"><i
+                    class="fa fa-road"></i>Destination-Over</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="lighter"><i
+                    class="fa fa-road"></i>Lighter</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="copy"><i
+                    class="fa fa-road"></i>Copy</label>
+            <label class="radioButton"><input class="radios" type="radio" name="brush" value="xor"><i
+                    class="fa fa-road"></i>Xor</label>
+        </div>
+
+    </div>
+
+    <canvas id="draw" width="1000px" height="600px"></canvas>
+
+    <footer class="Tra-fot">
+
+        <h3>Rimon@Drawing App</h3>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script src="../js/PolarCurve.js"></script>
+</body>
+
+</html>
